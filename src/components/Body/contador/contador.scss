@@ -1,0 +1,19 @@
+
+.contadorWrapper {
+    border: solid 2px blue;
+    padding: 10px;
+    background-color: rgba(140, 147, 248, 0.4);
+    margin: 10px 0;
+    button {
+        margin: 5px;
+        width: 50px;
+        height: 50px;
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.desactivado {
+    background-color: #424242;
+}
