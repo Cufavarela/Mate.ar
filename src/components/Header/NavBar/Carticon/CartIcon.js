@@ -1,10 +1,11 @@
 import React from 'react';
 import cart from '../../../../images/cart.svg';
+import './cart.scss';
 
-function CartIcon () {
+function CartIcon (props) {
 
     return <div>
-        <img src={cart}></img>
+        <img src={cart}></img><div className="itemsInCart">({props.items})</div>
     </div>
 }
 

@@ -2,28 +2,38 @@ import React, { useState } from 'react';
 import './contador.scss';
 
 
-function Contador() {
-    const [count, setCount] = useState(0);
+function Contador({initial, max, min, onAdd}) {
+
+
+    const [counter, setCounter] = useState(initial);
+
+    const increment = () => {
+        if (counter < max) setCounter(counter + 1) ;
+    };
+
+    const decrement = () => {
+      if (counter > min) setCounter(counter - 1) ;
+    };
+
 
 
     return (
       <div className="contadorWrapper">
-        <p>Clicks: {count} </p>
-        <button id="suma" onClick={() => count < 10 ? setCount(count + 1) & activarBoton() : null}>
-          +
-        </button>
-        <button id="resta" onClick={() => count !== 0 ? setCount(count - 1) : desactivarBoton()}>
-          -
-        </button>
+        <div>
+          <h5>Producto</h5>
+          <div className="botones">
+            <button className="boton" onClick={decrement} > - </button>
+            <h3 className="num"> {counter} </h3>
+            <button className="boton" onClick={increment}> + </button>
+          </div>
+        </div>
+        <div>
+          <button onClick={() => onAdd(counter)}>Agregar al Carrito</button>
+        </div>
       </div>
     );
   }
 
-  function desactivarBoton () {
-    document.getElementById('resta').classList.add('desactivado');
-  }
-  function activarBoton () {
-    document.getElementById('resta').classList.remove('desactivado');
-  }
+
 
   export default Contador;

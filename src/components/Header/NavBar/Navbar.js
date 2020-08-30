@@ -2,7 +2,7 @@ import React from 'react';
 import CartIcon from './Carticon/CartIcon';
 import './navbar.scss';
 
-function Navbar () {
+function Navbar (props) {
 
     return(
         <nav className="navbar">
@@ -18,7 +18,7 @@ function Navbar () {
                 </li>
                 <li className="navbarItem">
                     <a to="/cart">
-                        <CartIcon />
+                        <CartIcon items={props.items}/>
                     </a>
                 </li>
             </ul>

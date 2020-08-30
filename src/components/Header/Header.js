@@ -3,10 +3,10 @@ import logo from '../../images/logoMate.svg';
 import Navbar from './NavBar/Navbar';
 import './header.scss';
 
-function Header () {
+function Header (props) {
     return <div className="header">
         <img className="logo" src={logo} alt="logo"></img>
-        <Navbar />
+        <Navbar items={props.items}/>
     </div>
 }
 
