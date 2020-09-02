@@ -20,7 +20,7 @@ function Contador({initial, max, min, onAdd}) {
     return (
       <div className="contadorWrapper">
         <div>
-          <h5>Producto</h5>
+          <h5>Cantidad</h5>
           <div className="botones">
             <button className="boton" onClick={decrement} > - </button>
             <h3 className="num"> {counter} </h3>
