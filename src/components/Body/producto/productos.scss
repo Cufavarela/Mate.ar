@@ -1,0 +1,57 @@
+
+@import '../../../variables.scss';
+
+.productContainer {
+    .productList {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        list-style-type: none;
+
+        // .productList li {
+        //     flex: 0 1 34rem;
+        //     margin: 1rem;
+        //     height: 50rem;
+        //     list-style-type: none;
+        //     padding: 0;
+        //   }
+
+
+          .producto {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 1rem;
+            background-color: rgb(255, 255, 255);
+            padding: .5rem;
+            border-radius: 3%;
+            max-width: 18rem;
+            transition: ease .5s;
+            ;
+
+
+            &:hover {
+                transform: scale(1.02);
+            }
+          }
+
+          .productoImg {
+            max-width: 100%;
+            max-height: 18rem;
+          }
+
+          .productoName {
+            font-size: 1.5rem;
+            font-weight: bold;
+            h4 {
+                margin: 0;
+            }
+          }
+
+          .precio {
+            font-size: 1rem;
+            font-weight: bold;
+          }
+    }
+}

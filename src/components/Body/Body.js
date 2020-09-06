@@ -1,6 +1,7 @@
 import React from 'react';
 import './body.scss';
 import Contador from './contador/contador';
+import ProductList from './producto/ProductList';
 
 function Body ({onAdd}) {
 
@@ -13,9 +14,9 @@ function Body ({onAdd}) {
     const { initial, min, max } = valores;
 
 
-
     return <div className="body">
         <Contador initial={initial} max={max} min={min} onAdd={onAdd} />
+        <ProductList />
     </div>
 }
 
