@@ -1,6 +1,8 @@
 
 @import '../../../variables.scss';
 
+
+
 .productContainer {
     .productList {
         display: flex;
@@ -8,15 +10,6 @@
         align-items: center;
         flex-wrap: wrap;
         list-style-type: none;
-
-        // .productList li {
-        //     flex: 0 1 34rem;
-        //     margin: 1rem;
-        //     height: 50rem;
-        //     list-style-type: none;
-        //     padding: 0;
-        //   }
-
 
           .producto {
             display: flex;
@@ -28,8 +21,6 @@
             border-radius: 3%;
             max-width: 18rem;
             transition: ease .5s;
-            ;
-
 
             &:hover {
                 transform: scale(1.02);

@@ -3,3 +3,11 @@
 $celeste : #b1d2e3;
 $rosa : #f7adc6;
 $dark : #2919ff;
+
+// Keyframes
+
+@keyframes aparecer {
+    from {opacity: 0;};
+    to {opacity: 1;}
+}
+

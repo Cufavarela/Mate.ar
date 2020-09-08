@@ -1,4 +1,4 @@
-import React, {useEffect} from'react';
+import React, { useState } from'react';
 import Product from './Product';
 import mate1 from '../../../images/aime.jpg';
 import mate2 from '../../../images/clau.jpg';
@@ -8,7 +8,7 @@ import mate3 from '../../../images/matias.jpg';
 
 function ProductList() {
 
-    const data = [{
+    const mock = [{
         id: 'aaa',
         name: 'Aimé',
         image: mate1,
@@ -33,20 +33,19 @@ function ProductList() {
         price: 760
     }];
 
+    const [products, setProducts] = useState([]);
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-          console.log(data);
-        }, 2000);
-        return () => clearTimeout(timer);
-      }, []);
+
+    const productos = new Promise((res, rej) => {
+      setTimeout(() => res(mock), 2000);
+    })
+      .then(resp => setProducts(resp))
+      .catch(rej => console.error("Esto está andando mal."));
 
 
     return <div>
-        <Product data={data} />
+        <Product data={products} />
     </div>
-
-
 }
 
 export default ProductList;
