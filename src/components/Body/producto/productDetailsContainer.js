@@ -1,12 +1,12 @@
-import React, { useState } from'react';
-import Product from './Product';
+import React, { useEffect, useState } from 'react';
+import ProductDetails from './productDetail';
 import mate1 from '../../../images/aime.jpg';
 import mate2 from '../../../images/clau.jpg';
 import mate3 from '../../../images/matias.jpg';
 
 
+function DetallesContainer (onAdd) {
 
-function ProductList({ onAdd }) {
 
     const mock = [{
         id: 'aaa',
@@ -15,16 +15,16 @@ function ProductList({ onAdd }) {
         description: 'El Mate Aimé es re cheto, no es para vos si a tu nombre de agregan el prefijo "LA".',
         stock: 5,
         price: 750
-      },
-      {
+    },
+    {
         id: 'aab',
         name: 'DeVito',
         image: mate2,
         description: 'El Mate DeVito es ideal para tu vieja, porque es cortito y gordito.',
         stock: 1,
         price: 700
-      },
-      {
+    },
+    {
         id: 'aac',
         name: 'On Fire',
         image: mate3,
@@ -33,19 +33,29 @@ function ProductList({ onAdd }) {
         price: 760
     }];
 
-    const [products, setProducts] = useState([]);
+
+    const [product, setProduct] = useState([]);
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+
+        const detalles = new Promise((res, rej) => {
+            setTimeout(() => res(mock) & setLoading(true), 3000);
+        })
+            .then(resp => setProduct(resp) & setLoading(false))
+            .catch(rej => console.error("Algo está andando mal."));
 
 
-    const productos = new Promise((res, rej) => {
-      setTimeout(() => res(mock), 1000);
-    })
-      .then(resp => setProducts(resp))
-      .catch(rej => console.error("Algo está andando mal."));
+    }, []);
 
+    if (loading) {
+        return <div>Cargando...</div>
+    }else {
+        return <div>
+            <ProductDetails data={product} onAdd={onAdd}/>
+        </div>
 
-    return <div>
-        <Product data={products} onAdd={onAdd}  />
-    </div>
+    }
 }
 
-export default ProductList;
+export default DetallesContainer;

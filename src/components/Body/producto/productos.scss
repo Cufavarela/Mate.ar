@@ -10,6 +10,7 @@
         align-items: center;
         flex-wrap: wrap;
         list-style-type: none;
+        margin: 0;
 
           .producto {
             display: flex;
@@ -19,7 +20,7 @@
             background-color: rgb(255, 255, 255);
             padding: .5rem;
             border-radius: 3%;
-            max-width: 18rem;
+            max-width: 15rem;
             transition: ease .5s;
 
             &:hover {
@@ -29,11 +30,11 @@
 
           .productoImg {
             max-width: 100%;
-            max-height: 18rem;
+            max-height: 15rem;
           }
 
           .productoName {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: bold;
             h4 {
                 margin: 0;
@@ -43,6 +44,57 @@
           .precio {
             font-size: 1rem;
             font-weight: bold;
+            margin: 10px;
           }
+
+          .description {
+            font-size: .8rem;
+          }
+    }
+
+    /*---------------------------------------------------------*/
+
+    .productDetails {
+      list-style-type: none;
+      margin: 0;
+
+      .producto {
+        display: grid;
+        grid-template-areas: "img nombre"
+                            "img precio"
+                            "img desc"
+                            "img btn";
+        margin: 1rem;
+        background-color: rgb(255, 255, 255);
+        padding: .5rem;
+        border-radius: 3%;
+
+        .productoImg {
+          grid-area: img;
+        }
+        .productoName {
+          grid-area: nombre;
+          font-size: 30px;
+          align-self: flex-end;
+          h4 {
+            margin: 0;
+        }
+
+        }
+        .precio {
+          grid-area: precio;
+          font-size: 30px;
+          align-self: center;
+
+        }
+        .description {
+          grid-area: desc;
+          font-size: 20px;
+        }
+        .btnContador {
+          grid-area: btn;
+        }
+
+      }
     }
 }

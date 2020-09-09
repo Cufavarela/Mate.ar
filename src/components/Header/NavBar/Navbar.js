@@ -8,9 +8,6 @@ function Navbar (props) {
         <nav className="navbar">
             <ul className="menu">
                 <li className="navbarItem">
-                    <a to="/">Inicio</a>
-                </li>
-                <li className="navbarItem">
                     <a to="/productos">Productos</a>
                 </li>
                 <li className="navbarItem">

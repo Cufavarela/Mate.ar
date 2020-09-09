@@ -19,16 +19,16 @@ function Contador({initial, max, min, onAdd}) {
 
     return (
       <div className="contadorWrapper">
-        <div>
-          <h5>Cantidad</h5>
+        <div className="contador">
+          <p>Cantidad: </p>
+          <p className="num"> {counter} </p>
           <div className="botones">
-            <button className="boton" onClick={decrement} > - </button>
-            <h3 className="num"> {counter} </h3>
             <button className="boton" onClick={increment}> + </button>
+            <button className="boton" onClick={decrement} > - </button>
           </div>
         </div>
         <div>
-          <button onClick={() => onAdd(counter)}>Agregar al Carrito</button>
+          <button className="alCarrito" onClick={() => onAdd(counter)}>Agregar al Carrito</button>
         </div>
       </div>
     );

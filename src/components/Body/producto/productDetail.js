@@ -1,14 +1,13 @@
 import React from'react';
 import './productos.scss';
 import Contador from '../contador/contador';
-import DetallesContainer from './productDetailsContainer';
+
+function ProductDetails(props) {
 
 
-
-function Product(props) {
 
     return <div className="productContainer">
-        <ul className="productList">
+        <ul className="productDetails">
         {props.data.map(element =>
                 <li key={element.id}>
                 <div className="producto">
@@ -18,7 +17,7 @@ function Product(props) {
                     </div>
                     <div className="description">{element.description}</div>
                     <div className="precio">${element.price}</div>
-                    <div>
+                    <div className="btnContador">
                         <Contador initial={1} max={element.stock} min={0} onAdd={props.onAdd} />
                     </div>
                 </div>
@@ -28,4 +27,4 @@ function Product(props) {
     </div>
 }
 
-export default Product;
+export default ProductDetails;

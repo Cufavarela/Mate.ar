@@ -1,29 +1,41 @@
 
 .contadorWrapper {
-    border: solid 2px blue;
-    padding: 10px;
-    background-color: rgba(140, 147, 248, 0.4);
-    margin: 10px 0;
-    h5 {
-        margin: 0;
-    }
-    .botones{
-        display: flex;
-        justify-content: center;
-        margin: 15px;
+    // padding: 10px;
 
-        .boton {
-            margin: 5px;
-            width: 50px;
-            height: 50px;
-            &:focus {
-                outline: none;
+    .contador{
+        display: grid;
+        grid-template-columns: 1fr 1fr 2fr;
+        margin-bottom: 10px;
+        align-items: center;
+
+
+        p {
+            font-size: 15px;
+            margin: 0;
+        }
+
+        .botones {
+            display: flex;
+            justify-content: center;
+
+            .boton {
+                width: 30px;
+                height: 30px;
+                margin: 2px;
+                &:focus {
+                    outline: none;
+                }
             }
         }
-        .num {
-            font-size: 30px;
-            font-weight: 600;
-            margin: 10px;
+    }
+
+    .alCarrito {
+        width: 100%;
+        padding: 3px;
+        font-size: 15px;
+
+        &:focus {
+            outline: none;
         }
     }
 }
