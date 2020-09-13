@@ -1,29 +1,27 @@
-import React from'react';
+import React from 'react';
 import './productos.scss';
 import Contador from '../contador/contador';
+
 
 function ProductDetails(props) {
 
 
-
     return <div className="productContainer">
-        <ul className="productDetails">
-        {props.data.map(element =>
-                <li key={element.id}>
-                <div className="producto">
-                    <img className="productoImg" src={element.image} alt="producto"></img>
-                    <div className="productoName">
-                        <h4>{element.name}</h4>
-                    </div>
-                    <div className="description">{element.description}</div>
-                    <div className="precio">${element.price}</div>
-                    <div className="btnContador">
-                        <Contador initial={1} max={element.stock} min={0} onAdd={props.onAdd} />
-                    </div>
+        <div className="producto">
+            <div className="productoImg">
+                <img  src={props.image} alt="producto"></img>
+            </div>
+            <div className="productInfo">
+                <div className="productoName">
+                    <h4>{props.name}</h4>
                 </div>
-            </li>
-            )}
-        </ul>
+                <div className="precio">${props.price}</div>
+                <div className="description">{props.description}</div>
+                <div className="btnContador">
+                    <Contador initial={1} max={props.stock} min={0} onAdd={props.onAdd} />
+                </div>
+            </div>
+        </div>
     </div>
 }
 

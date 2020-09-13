@@ -20,15 +20,14 @@ function Contador({initial, max, min, onAdd}) {
     return (
       <div className="contadorWrapper">
         <div className="contador">
-          <p>Cantidad: </p>
-          <p className="num"> {counter} </p>
           <div className="botones">
             <button className="boton" onClick={increment}> + </button>
+            <p className="num"> {counter} </p>
             <button className="boton" onClick={decrement} > - </button>
           </div>
         </div>
         <div>
-          <button className="alCarrito" onClick={() => onAdd(counter)}>Agregar al Carrito</button>
+          <button className="alCarrito" onClick={() => onAdd(counter)}>Lo quiero!</button>
         </div>
       </div>
     );

@@ -6,10 +6,10 @@ import mate3 from '../../../images/matias.jpg';
 
 
 
-function ProductList({ onAdd }) {
+function ProductList() {
 
     const mock = [{
-        id: 'aaa',
+        id: 1,
         name: 'Aimé',
         image: mate1,
         description: 'El Mate Aimé es re cheto, no es para vos si a tu nombre de agregan el prefijo "LA".',
@@ -17,7 +17,7 @@ function ProductList({ onAdd }) {
         price: 750
       },
       {
-        id: 'aab',
+        id: 2,
         name: 'DeVito',
         image: mate2,
         description: 'El Mate DeVito es ideal para tu vieja, porque es cortito y gordito.',
@@ -25,7 +25,7 @@ function ProductList({ onAdd }) {
         price: 700
       },
       {
-        id: 'aac',
+        id: 3,
         name: 'On Fire',
         image: mate3,
         description: 'El Mate On Fire está genial para vos que te dicen antorcha en vez de Diego.',
@@ -44,7 +44,7 @@ function ProductList({ onAdd }) {
 
 
     return <div>
-        <Product data={products} onAdd={onAdd}  />
+        <Product data={products} />
     </div>
 }
 
