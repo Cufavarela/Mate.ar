@@ -22,12 +22,11 @@ function Contador({initial, max, min, onAdd}) {
         <div className="contador">
           <div className="botones">
             <button className="boton" onClick={increment}> + </button>
-            <p className="num"> {counter} </p>
+            <div>
+              <button className="alCarrito" onClick={() => onAdd(counter)}>Quiero {counter} !</button>
+            </div>
             <button className="boton" onClick={decrement} > - </button>
           </div>
-        </div>
-        <div>
-          <button className="alCarrito" onClick={() => onAdd(counter)}>Lo quiero!</button>
         </div>
       </div>
     );
