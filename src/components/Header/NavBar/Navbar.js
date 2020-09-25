@@ -16,7 +16,7 @@ function Navbar (props) {
                 </li>
                 <li className="navbarItem">
                     <Link to="/cart">
-                        <CartIcon items={props.items}/>
+                        <CartIcon />
                     </Link>
                 </li>
             </ul>

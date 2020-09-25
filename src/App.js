@@ -7,32 +7,34 @@ import Contacto from './components/Body/contacto/contacto';
 import Cart from './components/Body/carrito/Carrito';
 import ProductList from './components/Body/producto/ProductList';
 import DetallesDeProducto from './components/Body/producto/productDetailsContainer';
+import {CartContext} from './contexts/cartContext';
 
 
 function App() {
-  const [items, setItems] = useState(0);
 
-  const onAdd = (counter) => {
-    setItems(items + counter);
-  };
+  const [qty, setQty] = useState(1);
+  const [productId, setProductId] = useState('');
+
 
   return (
     <BrowserRouter>
         <div className="App">
-          <Header items={items}/>
+          <Header />
           <Switch>
             <Route exact path="/">
               <ProductList />
             </Route>
-            <Route exact path="/product/:id">
-              <DetallesDeProducto onAdd={onAdd} />
-            </Route>
-            <Route path="/contacto">
-              <Contacto />
-            </Route>
-            <Route path="/cart">
-              <Cart />
-            </Route>
+            <CartContext.Provider value={[qty, setQty], [productId, setProductId]}>
+              <Route exact path="/product/:id">
+                <DetallesDeProducto />
+              </Route>
+              <Route path="/contacto">
+                <Contacto />
+              </Route>
+              <Route path="/cart">
+                <Cart />
+              </Route>
+            </CartContext.Provider>
           </Switch>
           <Footer />
         </div>

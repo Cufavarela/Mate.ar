@@ -6,7 +6,7 @@ import './header.scss';
 function Header (props) {
     return <div className="header">
         <img className="logo" src={logo} alt="logo"></img>
-        <Navbar items={props.items}/>
+        <Navbar />
     </div>
 }
 

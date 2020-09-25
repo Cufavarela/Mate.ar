@@ -3,6 +3,7 @@ import './productos.scss';
 import Contador from '../contador/contador';
 
 
+
 function ProductDetails(props) {
 
 
@@ -18,7 +19,7 @@ function ProductDetails(props) {
                 <div className="precio">${props.price}</div>
                 <div className="description">{props.description}</div>
                 <div className="btnContador">
-                    <Contador initial={1} max={props.stock} min={1} onAdd={props.onAdd} />
+                    <Contador id={props.id} initial={1} max={props.stock} min={1} />
                 </div>
             </div>
         </div>

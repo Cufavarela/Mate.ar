@@ -8,7 +8,7 @@ import Loading from '../loading.js/loading';
 
 
 
-function DetallesDeProducto ({onAdd}) {
+function DetallesDeProducto () {
 
     const mock = [{
         id: 1,
@@ -36,6 +36,7 @@ function DetallesDeProducto ({onAdd}) {
     }];
 
 
+
     const [product, setProduct] = useState([]);
     const [loading, setLoading] = useState(true);
     const { id } = useParams();
@@ -53,7 +54,7 @@ function DetallesDeProducto ({onAdd}) {
 
     return <div>
         {loading ? <Loading />
-        : <ProductDetails {...product} onAdd={onAdd}/>
+        : <ProductDetails {...product} />
         }
     </div>
 }

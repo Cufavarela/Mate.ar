@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import cart from '../../../../images/cart.svg';
 import './cart.scss';
+import {CartContext} from '../../../../contexts/cartContext';
 
-function CartIcon (props) {
+function CartIcon () {
+
 
     return <div>
-        <img src={cart} alt="carrito-de-compras"></img><div className="itemsInCart">({props.items})</div>
+        <img src={cart} alt="carrito-de-compras"></img><div className="itemsInCart">()</div>
     </div>
 }
 
