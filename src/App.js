@@ -7,24 +7,22 @@ import Contacto from './components/Body/contacto/contacto';
 import Cart from './components/Body/carrito/Carrito';
 import ProductList from './components/Body/producto/ProductList';
 import DetallesDeProducto from './components/Body/producto/productDetailsContainer';
-import {CartContext} from './contexts/cartContext';
+import {CartContext, CartProvider} from './contexts/cartContext';
 
 
 function App() {
 
-  const [qty, setQty] = useState(1);
-  const [productId, setProductId] = useState('');
 
 
   return (
     <BrowserRouter>
+        <CartProvider>
         <div className="App">
           <Header />
           <Switch>
             <Route exact path="/">
               <ProductList />
             </Route>
-            <CartContext.Provider value={[qty, setQty], [productId, setProductId]}>
               <Route exact path="/product/:id">
                 <DetallesDeProducto />
               </Route>
@@ -34,10 +32,10 @@ function App() {
               <Route path="/cart">
                 <Cart />
               </Route>
-            </CartContext.Provider>
           </Switch>
           <Footer />
         </div>
+        </CartProvider>
     </BrowserRouter>
   );
 }

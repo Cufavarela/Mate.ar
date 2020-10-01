@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import ProductDetails from './productDetail';
 import mate1 from '../../../images/aime.jpg';
 import mate2 from '../../../images/clau.jpg';
 import mate3 from '../../../images/matias.jpg';
 import { useParams } from 'react-router-dom';
 import Loading from '../loading.js/loading';
+import { CartContext } from '../../../contexts/cartContext';
 
 
 
@@ -36,7 +37,6 @@ function DetallesDeProducto () {
     }];
 
 
-
     const [product, setProduct] = useState([]);
     const [loading, setLoading] = useState(true);
     const { id } = useParams();
@@ -44,13 +44,13 @@ function DetallesDeProducto () {
     useEffect(() => {
 
         const detalles = new Promise((res, rej) => {
-            setTimeout(() => res(mock), 3000);
+            setTimeout(() => res(mock), 1000);
         })
             .then(resp => setProduct(resp[id - 1]))
             .catch(rej => console.error("Algo está andando mal."))
             .finally(resp => setLoading(false));
 
-    }, []);
+        }, []);
 
     return <div>
         {loading ? <Loading />

@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './productos.scss';
 import Contador from '../contador/contador';
+import { CartContext } from '../../../contexts/cartContext';
+import BuyButton from './buyButton/buyButton';
 
 
 
 function ProductDetails(props) {
 
+    const [itemCount, setItemCount] = useState(1);
 
     return <div className="productContainer">
         <div className="producto">
@@ -19,8 +22,9 @@ function ProductDetails(props) {
                 <div className="precio">${props.price}</div>
                 <div className="description">{props.description}</div>
                 <div className="btnContador">
-                    <Contador id={props.id} initial={1} max={props.stock} min={1} />
+                    <Contador initial={itemCount} max={props.stock} min={1} setCount={setItemCount}/>
                 </div>
+                <BuyButton id={props.id} name={props.name} price={props.price} counter={itemCount} />
             </div>
         </div>
     </div>

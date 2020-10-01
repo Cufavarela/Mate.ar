@@ -3,7 +3,7 @@ import CartIcon from './Carticon/CartIcon';
 import { Link } from 'react-router-dom';
 import './navbar.scss';
 
-function Navbar (props) {
+function Navbar () {
 
     return(
         <nav className="navbar">

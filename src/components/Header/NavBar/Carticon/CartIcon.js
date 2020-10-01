@@ -1,13 +1,16 @@
 import React, { useContext } from 'react';
-import cart from '../../../../images/cart.svg';
+import cartImg from '../../../../images/cart.svg';
 import './cart.scss';
 import {CartContext} from '../../../../contexts/cartContext';
 
 function CartIcon () {
 
+    const { cart } = useContext(CartContext);
+
+    const totalQty = cart.reduce((total, item) => total + item.quantity, 0);
 
     return <div>
-        <img src={cart} alt="carrito-de-compras"></img><div className="itemsInCart">()</div>
+        <img src={cartImg} alt="carrito-de-compras"></img><div className="itemsInCart">({totalQty})</div>
     </div>
 }
 

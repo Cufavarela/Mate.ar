@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
+import { CartContext } from '../../../contexts/cartContext';
+import './cart.scss';
 
 
 
-function ProductsInCart(props) {
+function ProductsInCart(mate) {
 
+    return <div className="cartItems">
+        <table>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+            </tr>
 
-    return <div>
-        <h1>{props.name}</h1>
-        <h2>{props.price}</h2>
+                <tr>
+                    <td>{mate.name}</td>
+                    <td>{mate.qty}</td>
+                    <td>${mate.price * mate.qty}</td>
+                </tr>
+
+        </table>
     </div>
 }
 

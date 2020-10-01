@@ -1,29 +1,27 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './contador.scss';
 import {CartContext} from '../../../contexts/cartContext';
 
 
-function Contador({initial, max, min, id}) {
-
-    const [qty, setQty] = useContext(CartContext);
-    const [productId, setProductId] = useContext(CartContext);
-
-
+function Contador ({ initial, max, min, setCount = () => {} }) {
 
     const [counter, setCounter] = useState(initial);
 
+    useEffect(() => {
+      setCount(counter);
+    }, [counter])
+
     const increment = () => {
-        if (counter < max) setCounter(counter + 1) ;
+        if (counter < max) {
+          setCounter(counter + 1);
+        } ;
     };
 
     const decrement = () => {
-      if (counter > min) setCounter(counter - 1) ;
+      if (counter > min) {
+        setCounter(counter - 1);
+      } ;
     };
-
-    const addToCart = () => {
-      setQty(counter);
-      setProductId(id);
-    }
 
     return (
       <div className="contadorWrapper">
@@ -31,7 +29,7 @@ function Contador({initial, max, min, id}) {
           <div className="botones">
             <button className="boton" onClick={increment}> + </button>
             <div>
-              <button className="alCarrito" onClick={addToCart}>Agregar {counter} al carrito</button>
+              <h3>Cantidad: {counter}</h3>
             </div>
             <button className="boton" onClick={decrement} > - </button>
           </div>
