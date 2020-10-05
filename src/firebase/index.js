@@ -1,7 +1,7 @@
 import * as firebase from 'firebase/app';
 import 'firebase/firestore';
 
- const app = firebase.initialzeApp = ({
+ const app = firebase.initializeApp({
     apiKey: "AIzaSyD4Qgr6ZAgod-yDeoQhklI1kGk8KKWURwM",
     authDomain: "matearshop.firebaseapp.com",
     databaseURL: "https://matearshop.firebaseio.com",
