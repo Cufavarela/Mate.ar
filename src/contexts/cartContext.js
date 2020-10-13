@@ -6,13 +6,12 @@ export function CartProvider({children}) {
 
     const [cart, setCart] = useState([]);
 
-    const addProduct = (id, quantity, name, price) => {
+    const addProduct = (id, name, price) => {
 
         setCart([
             ...cart,
             {
                 id: id,
-                quantity: quantity,
                 name: name,
                 price: price
             }

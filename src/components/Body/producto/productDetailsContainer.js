@@ -1,8 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
-import ProductDetails from './productDetail';
 import { useParams } from 'react-router-dom';
 import Loading from '../loading.js/loading';
 import { getFirestore } from '../../../firebase';
+import './productDetails.scss';
+import './buyButton/buyButton.scss';
+import BuyButton from './buyButton/buyButton';
 
 
 function DetallesDeProducto () {
@@ -34,7 +36,21 @@ function DetallesDeProducto () {
 
     return <div>
         {loading ? <Loading />
-        : <ProductDetails {...product} />
+        : <div className="productDetailsContainer">
+            <div className="producto">
+                <div className="productoImg">
+                    <img  src={product.image} alt="producto"></img>
+                </div>
+                <div className="productInfo">
+                    <div className="productoName">
+                        <h4>{product.name}</h4>
+                    </div>
+                    <div className="precio">${product.price}</div>
+                    <div className="description">{product.description}</div>
+                    <BuyButton {...product}/>
+                </div>
+            </div>
+        </div>
         }
     </div>
 }

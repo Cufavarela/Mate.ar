@@ -8,6 +8,7 @@ function Carrito () {
 
     const { cart }  = useContext(CartContext);
 
+    console.log(cart);
     console.log(cart.length);
 
     return <div className="cartItems">
@@ -16,14 +17,12 @@ function Carrito () {
             : <div className="itemInCartContainer">
                 <div className="itemInCart">
                     <h5 className="name">Nombre</h5>
-                    <h5>Cantidad</h5>
                     <h5>Precio</h5>
                 </div>
                 {cart.map(itemInCart =>
                 <div className="itemInCart">
                     <h5 className="name">{itemInCart.name}</h5>
-                    <h5>{itemInCart.quantity}</h5>
-                    <h5>${itemInCart.price * itemInCart.quantity}</h5>
+                    <h5>${itemInCart.price}</h5>
                 </div>
                 )}
             </div>
