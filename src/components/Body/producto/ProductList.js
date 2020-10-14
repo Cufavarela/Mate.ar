@@ -30,14 +30,14 @@ function ProductList() {
       })
     }, []);
 
-    return <>
+    return <div>
     {loading ?
       <Loader />
     :
       <div>
           <Product data={products} />
       </div>}
-    </>
+    </div>
 }
 
 export default ProductList;

@@ -62,7 +62,16 @@
       border: 2px solid black;
       margin: 20px auto;
       background-color: rgba(255, 255, 255, 0.377);
-    }
 
+      .mateWrapper {
+        text-align: right;
+        img {
+          width: 20%;
+          height: 20%;
+          object-fit: cover;
+          opacity: .3;
+        }
+      }
+    }
   }
 }

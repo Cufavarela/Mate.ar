@@ -1,30 +1,13 @@
-import * as firebase from 'firebase/app';
-import 'firebase/firestore';
-import { getFirestore } from '../../../firebase';
+import React, { useContext } from 'react';
 import {CartContext} from '../../../contexts/cartContext';
-import { useEffect } from 'react';
 
+function FinalizarCompra () {
 
-const db = getFirestore();
+    const { crearOrden }  = useContext(CartContext);
 
-const { cart }  = useContext(CartContext);
+    return (
+        <button onClick={() => crearOrden()}>Finalizar compra</button>
+    )
+}
 
-
-const orders = db.collection("orders");
-const newOrder = {
-    buyer: useInfo,
-    items: cart,
-    date: firebase.firestore.Timestamp.fromDate(new Date()),
-    total: price (),
-};
-
-useEffect (() => {
-    orders.add(newOrder).then(({ id }) => {
-        setOrderId(id);
-    }).catch(err => {
-        setError(err);
-    }).finally(() => {
-        setLoading(false);
-    })
-
-}, []);
+export default FinalizarCompra;

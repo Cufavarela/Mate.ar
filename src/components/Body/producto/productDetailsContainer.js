@@ -23,7 +23,6 @@ function DetallesDeProducto () {
             if (!doc.exists) {
                 console.log("Item does not exists!");
             }
-            console.log("Item found!");
             setProduct({id: doc.id, ...doc.data() });
         })
         .catch((error) => {

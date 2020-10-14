@@ -1,0 +1,13 @@
+@import '../../../variables.scss';
+
+.orderContainer {
+    padding: 1rem;
+    .orderData {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        span {
+            font-weight: 700;
+        }
+    }
+}
