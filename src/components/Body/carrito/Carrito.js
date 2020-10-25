@@ -25,13 +25,13 @@ function Carrito () {
                     <h5>${itemInCart.price}</h5>
                 </div>
                 )}
-            <div>
+            <div className="finalizarWrapper">
                 <BotonFin />
             </div>
             </div>
             }
             <div className="asideItems">
-                <Link to="/"><h5 className="buttonBack"><span>↲</span>Seguir Comprando</h5></Link>
+                <Link to="/"><h5 className="buttonBack"><span>🛒</span>Seguir Comprando</h5></Link>
                 <div className="shipping">
                     <CompraData />
                     <div className="mateWrapper">

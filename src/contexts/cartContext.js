@@ -50,8 +50,10 @@ export function CartProvider({children}) {
         });
     }
 
+    /*----------------------------------------*/
+
     return (
-        <CartContext.Provider value={{ addProduct, cart, crearOrden, order }}>
+        <CartContext.Provider value={{ addProduct, cart, setCart, crearOrden, order, setOrder }}>
             {children}
         </CartContext.Provider>
     );

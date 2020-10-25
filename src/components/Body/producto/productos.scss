@@ -2,6 +2,9 @@
 @import '../../../variables.scss';
 
 
+.home {
+  overflow: hidden;
+}
 
 .productContainer {
 
@@ -25,10 +28,11 @@
 
 
 
-          .productoImg {
-            max-width: 100%;
-            transition: 0.4s ease-out;
-            border-radius: 15px;
+        .productoImg {
+          max-width: 100%;
+          transition: 0.4s ease-out;
+          border-radius: 15px;
+          box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 
           }
 
@@ -44,7 +48,9 @@
             left: 0;
             right: 0;
             margin: auto;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, .5);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, .7);
+            color: white;
+            letter-spacing: .1rem;
 
           }
 

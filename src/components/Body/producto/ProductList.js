@@ -30,13 +30,12 @@ function ProductList() {
       })
     }, []);
 
-    return <div>
+    return <div className="home">
     {loading ?
       <Loader />
     :
-      <div>
-          <Product data={products} />
-      </div>}
+      <Product data={products} />
+    }
     </div>
 }
 

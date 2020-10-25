@@ -6,7 +6,7 @@ function FinalizarCompra () {
     const { crearOrden }  = useContext(CartContext);
 
     return (
-        <button onClick={() => crearOrden()}>Finalizar compra</button>
+        <button className="botonFinalizar" onClick={() => crearOrden()}>Finalizar compra</button>
     )
 }
 
