@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import * as firebase from 'firebase/app';
 import 'firebase/firestore';
 import { getFirestore } from '../firebase';
-import userInfo from '../components/Body/carrito/userInfo';
 
 
 export const CartContext = React.createContext();
@@ -25,6 +24,10 @@ export function CartProvider({children}) {
 
     /* ------------------------------- */
 
+    const [user, setUser] = useState({});
+
+    /* ------------------------------- */
+
     const [order, setOrder] = useState({});
 
     const crearOrden = () => {
@@ -37,7 +40,7 @@ export function CartProvider({children}) {
         const db = getFirestore();
         const orders = db.collection("orders");
         const newOrder = {
-            buyer: userInfo,
+            buyer: user,
             items: cart,
             date: firebase.firestore.Timestamp.fromDate(new Date()),
             total: totalPrice,
@@ -53,7 +56,7 @@ export function CartProvider({children}) {
     /*----------------------------------------*/
 
     return (
-        <CartContext.Provider value={{ addProduct, cart, setCart, crearOrden, order, setOrder }}>
+        <CartContext.Provider value={{ addProduct, cart, setCart, crearOrden, order, setOrder, user, setUser }}>
             {children}
         </CartContext.Provider>
     );
