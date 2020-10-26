@@ -37,17 +37,17 @@ function Contacto () {
 
     return <div className="contactoWrapper">
         <div className="logo">
-            <img src={logo}></img>
+            <img src={logo} alt="logo"></img>
         </div>
         <div className="contacto">
             <div className="redes">
-                <a href="#"><img src={insta}></img></a>
+                <a href="https://www.instagram.com/mates.ar/"><img src={insta} alt="instagram"></img></a>
             </div>
             <div className="redes">
-                <a href="#"><img src={wp}></img></a>
+                <a href="https://api.whatsapp.com/send?phone=541169809120"><img src={wp} alt="whatsapp"></img></a>
             </div>
             <div className="redes">
-                <a href="#"><img src={face}></img></a>
+                <a href="https://www.facebook.com/caroo.lezcano"><img src={face} alt="facebook"></img></a>
             </div>
         </div>
         <div className="dudas">

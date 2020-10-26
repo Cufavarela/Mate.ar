@@ -27,7 +27,7 @@ function Navbar () {
                     <Link to="/">Productos</Link>
                 </li>
                 <li className="navbarItem dropdown">
-                    <a onClick={() => dropdown()}>Categorias</a>
+                    <a href="#" onClick={() => dropdown()}>Categorias</a>
                     <DropdownMenu />
                 </li>
                 <li className="navbarItem">

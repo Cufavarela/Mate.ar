@@ -13,7 +13,7 @@ function Carrito () {
 
     return <div className="cartItems">
         { cart.length === 0
-            ? <div className="noItems">No hay Items en el carrito <span>😲</span></div>
+            ? <div className="noItems">No hay Items en el carrito <span role="img" aria-label="cart">😲</span></div>
             : <div className="itemInCartContainer">
                 <div className="itemInCart">
                     <h5 className="name">Nombre</h5>
@@ -31,11 +31,11 @@ function Carrito () {
             </div>
             }
             <div className="asideItems">
-                <Link to="/"><h5 className="buttonBack"><span>🛒</span>Seguir Comprando</h5></Link>
+                <Link to="/"><h5 className="buttonBack"><span role="img" aria-label="cart">🛒</span>Seguir Comprando</h5></Link>
                 <div className="shipping">
                     <CompraData />
                     <div className="mateWrapper">
-                        <img src={mate}></img>
+                        <img src={mate} alt="mate"></img>
                     </div>
                 </div>
             </div>

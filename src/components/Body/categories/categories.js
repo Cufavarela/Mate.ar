@@ -8,7 +8,6 @@ const FilteredItemsList = () => {
 
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState('');
     const { id } = useParams();
 
     useEffect(() => {
@@ -28,7 +27,6 @@ const FilteredItemsList = () => {
             }));
         }).catch((error) => {
             console.log('Error serching Items', error);
-            setError(error);
         }).finally(() => {
             setLoading(false);
         })
