@@ -25,7 +25,7 @@ function CompraData() {
                     <p>Precio Final: <span>${order.total}</span></p>
                     <p>Num. de pedido: <span>{order.id}</span></p>
                     <div className="pagoWrapper">
-                        <Link to="/"><button className="botonPago" onClick={() => {resetShop()}}>Pagar!</button></Link>
+                        <Link to="/" className="botonPago" onClick={() => {resetShop()}}>Pagar!</Link>
                     </div>
                 </div>
             :
